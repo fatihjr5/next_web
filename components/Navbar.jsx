@@ -2,8 +2,8 @@ import React from 'react'
 import Links from './sc/Links'
 export default function Navbar() {
   return (
-    <div className='mb-20 mt-10 flex flex-row justify-between items-center'>
-        <h5 className="text-white font-extrabold text-2xl">Fatihibrahim.</h5>
+    <div className='mt-10 flex flex-row justify-between items-center mb-32 px-20'>
+        <h5 className="text-black text-2xl averta-bold tracking-tighter">Fatihibrahim.</h5>
         <Links/>
     </div>
   )

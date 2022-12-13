@@ -3,8 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  font-family: Montserrat;
-  background-color: black;
+@font-face {
+  font-family: averta-regular;
+  src: url(AvertaStd-Regular.ttf);
 }
-
+@font-face {
+  font-family: averta-semibold;
+  src: url(AvertaStd-Semibold.ttf);
+}
+@font-face {
+  font-family: averta-bold;
+  src: url(AvertaStd-Bold.ttf);
+}

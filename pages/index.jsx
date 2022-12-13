@@ -1,29 +1,38 @@
-import Link from 'next/link'
+// import Link from 'next/link'
 import React from 'react'
 import Home from './layouts/home'
 import Image from 'next/image'
+// import CardWork from '../components/CardWork'
+
 export default function index() {
+  const settings = {
+    lazyload: true,
+    nav: false,
+    center: true,
+    autoPlay: true,
+    mouseDrag: true
+  };
   const work = [
     {
+      image: "/img/stock.png",
       name: "Nifty Educate",
-      description : "Nifty is a elearning platform for children that will generate NFTs after finish the task or course."
+      description : "An education learning for children with e-learning base."
     },
     {
+      image: "/img/stock.png",
       name: "EMR Kustati",
-      description : "A system for hospital that record any data including patient, doctor, medicine, and many medical needs."
+      description : "An hospital service system that record all activity inside."
     },
     {
+      image: "/img/stock.png",
       name: "Triz Academy",
-      description : "Triz academy is a platform to be the first step when you aspire to be a young entrepreneur, guided by a professional mentor in their field."
+      description : "An education learning for children with e-learning base."
     },
     {
+      image: "/img/stock.png",
       name: "Kelas Presentasi",
-      description : "Onno News is a local digital media that provide national or international news content."
-    },
-    {
-      name: "Onno News",
-      description : "Onno News is a local digital media that provide national or international news content."
-    },
+      description : "An education learning for children with e-learning base."
+    }
   ]
   const resources = [
     {
@@ -65,64 +74,36 @@ export default function index() {
   ]
   return (
     <Home>
-    {/* header */}
-    <div className="grid grid-cols-1 md:grid-cols-2">
-      <div className="flex flex-col space-y-10">
-        <div className="flex flex-col space-y-4">
-          <div className="flex flex-row items-center space-x-2">
-            <span class="flex h-3 w-3">
-              <span class="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-[#7000DF] opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3 w-3 bg-[#7000DF]"></span>
-            </span>
-            <h5 className="text-sm font-medium text-[#c0c0c0]">Frontend Developer & UI Designer</h5>
-          </div>
-          <h5 className="text-4xl xl:text-[2.75rem] text-white bg-transparent leading-snug font-extrabold">consist to learn and practice, I produce superb products</h5>
-        </div>
-        <Link href="" className='text-white px-6 py-3 rounded-xl hover:border-[#7000df] hover:bg-[#7000df] duration-300 hover:scale-105 border-white border w-fit'>Get started</Link>
+      {/* header */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center px-20">
+        <section className="flex flex-col space-y-1">
+          <span className='text-sm averta-regular text-gray-400'>Frontend Developer & UI Designer</span>
+          <h5 className='text-4xl xl:text-5xl leading-snug xl:leading-snug averta-bold'>consist to learn and practice I produce superb products</h5>
+        </section>
+        <button className="w-fit h-fit text-xl averta-bold ml-auto px-6 py-3 rounded-full text-[#7000df] ring-1 ring-[#7000df]">Get Started</button>
       </div>
-      <Image src="/me.svg" className='ml-auto hidden lg:block' alt="" width="350" height="350"/>
-    </div>
-    <hr className='text-[#c0c0c0] opacity-25 mt-10 lg:mt-0'/>
-    {/* portofolio */}
-    <div className="flex flex-col justify-between mt-20">
-      <h5 className="text-[2rem] font-extrabold text-white">Discover my work</h5>
-      <div className="flex flex-col space-y-4 mt-12">
-        {work.map((item)=>
-          <div key={item.id}>
-            <div className="flex flex-col md:flex-row justify-between items-start lg:items-center text-white border-b border-[#c0c0c0] pb-4">
-              <h5 className='text-lg font-bold mb-2 lg:mb-0'>{item.name}</h5>
-              <p className='text-base text-[#c0c0c0] w-full lg:w-8/12 mb-6 lg:mb-0'>{item.description}</p>
-              <Link href="" className='text-base text-[#c0c0c0] hover:text-[#7000df] duration-300 font-semibold flex items-center gap-x-1'>
-                <span>Details</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-              </Link>
-            </div>
-          </div>
-        )}
+      {/* video */}
+      <div className="mt-52">
+        <video src="/video/qasdUd91.mp4" className='w-screen object-cover bg-center' autoPlay loop muted playsInline type="video/mp4"></video>
       </div>
-      <Link href="" className='text-white mt-10 px-6 py-3 rounded-xl hover:border-[#7000df] hover:bg-[#7000df] duration-300 hover:scale-105 border-white border w-fit mx-auto'>See all works</Link>
-    </div>
-    {/* resources */}
-    <div className="flex flex-col">
-      <div className="mt-20 rounded-2xl">
-        <h5 className="text-3xl text-white text-center font-extrabold bg-transparent">Resources</h5>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+      {/* portofolio */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 items-center px-20 mt-48">
+          <h5 className='text-2xl xl:text-3xl leading-snug xl:leading-snug averta-bold'>Everything should be prepared to avoid the things we won`t. Like showing my work before we collaborate, you can see details below.</h5>
+        <button className="w-fit h-fit text-xl averta-bold ml-auto px-6 py-3 rounded-full text-[#7000df] ring-1 ring-[#7000df]">See all</button>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-4 px-20 mt-36">
+        {/* <TinySlider settings={settings}> */}
           {
-            resources.map((item)=>
-            <div key={item.id} className="px-2 pt-2 pb-4 border border-[#c0c0c0] rounded-xl">
-              <Image src={item.image} width="100" height="100" className='w-96 h-56 object-cover bg-center rounded-tr-xl rounded-tl-xl' alt=""/>
-              <h5 className='text-lg font-bold mb-2 text-white mt-4'>{item.name}</h5>
-              <p className='text-sm font-medium mb-4 text-[#c0c0c0]'>{item.category}</p>
-              <button className='text-white mt-4 py-2 rounded-xl text-base hover:border-[#7000df] hover:bg-[#7000df] duration-300 hover:scale-100 border-white border w-full'>
-                <Link href={item.url} className='w-full bg-transparent px-10'>Download</Link>
-              </button>
-            </div>
+            work.map((items) =>
+              <div key={items.id}>
+                <Image src={items.image} alt="" className='w-full h-96 bg-center object-cover' width={100} height={100}/>
+                <h5 className='text-2xl averta-bold'>{items.name}</h5>
+                <h5 className='text-base averta-regular'>{items.description}</h5>
+              </div>
             )
           }
-        </div>
+        {/* </TinySlider> */}
       </div>
-      <Link href="" className='text-white mt-10 px-6 py-3 rounded-2xl hover:border-[#7000df] hover:bg-[#7000df] duration-300 hover:scale-105 border-white border w-fit mx-auto'>See all Resources</Link>
-    </div>
     </Home>
   )
 }

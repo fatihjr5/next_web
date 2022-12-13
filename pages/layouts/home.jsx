@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar'
 export default function Home({children}) {
   // const CrispNoSSR = dynamic(()=> <Crisp/>,{ssr:false})
   return (
-    <div className='px-10 sm:px-20 lg:px-40 max-w-7xl mx-auto'>
+    <div className=''>
         <Navbar/>
         {children}
         <Footer/>
