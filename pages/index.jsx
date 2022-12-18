@@ -1,108 +1,60 @@
-// import Link from 'next/link'
-import React from 'react'
+import { useEffect } from 'react'
 import Home from './layouts/home'
-import Image from 'next/image'
-// import CardWork from '../components/CardWork'
+import work from './api/work'
+import CardWork from '../components/CardWork'
+import Link from 'next/link'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-export default function index() {
-  const settings = {
-    lazyload: true,
-    nav: false,
-    center: true,
-    autoPlay: true,
-    mouseDrag: true
-  };
-  const work = [
-    {
-      image: "/img/stock.png",
-      name: "Nifty Educate",
-      description : "An education learning for children with e-learning base."
-    },
-    {
-      image: "/img/stock.png",
-      name: "EMR Kustati",
-      description : "An hospital service system that record all activity inside."
-    },
-    {
-      image: "/img/stock.png",
-      name: "Triz Academy",
-      description : "An education learning for children with e-learning base."
-    },
-    {
-      image: "/img/stock.png",
-      name: "Kelas Presentasi",
-      description : "An education learning for children with e-learning base."
-    }
-  ]
-  const resources = [
-    {
-      image: "/img/stock.png",
-      name : "Stock UI App",
-      category : "UI Design",
-      url: "https://fatihibrahim.gumroad.com/l/stocks-ui"
-    },
-    {
-      image: "/img/stock.png",
-      name : "Management Dashboard",
-      category : "HTML, Bootstrap",
-      url: "https://fatihibrahim.gumroad.com/l/stocks-ui"
-    },
-    {
-      image: "/img/stock.png",
-      name : "Personal Landing Page",
-      category : "UI Design",
-      url: "https://fatihibrahim.gumroad.com/l/stocks-ui"
-    },
-    {
-      image: "/img/stock.png",
-      name : "Personal Landing Page",
-      category : "UI Design",
-      url: "https://fatihibrahim.gumroad.com/l/stocks-ui"
-    },
-    {
-      image: "/img/stock.png",
-      name : "Personal Landing Page",
-      category : "UI Design",
-      url: "https://fatihibrahim.gumroad.com/l/stocks-ui"
-    },
-    {
-      image: "/img/stock.png",
-      name : "Personal Landing Page",
-      category : "UI Design",
-      url: "https://fatihibrahim.gumroad.com/l/stocks-ui"
-    },
-  ]
+export default function Index() {
+  useEffect(() => {
+    AOS.init({
+      easing: 'ease-in',
+      delay: 500,
+    });
+  });
   return (
     <Home>
       {/* header */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 items-center px-20">
-        <section className="flex flex-col space-y-1">
-          <span className='text-sm averta-regular text-gray-400'>Frontend Developer & UI Designer</span>
-          <h5 className='text-4xl xl:text-5xl leading-snug xl:leading-snug averta-bold'>consist to learn and practice I produce superb products</h5>
-        </section>
-        <button className="w-fit h-fit text-xl averta-bold ml-auto px-6 py-3 rounded-full text-[#7000df] ring-1 ring-[#7000df]">Get Started</button>
-      </div>
+      <section className="flex flex-col space-y-1 px-20 lg:ml-40">
+        <span className='text-sm averta-regular text-gray-400'>Frontend Developer & UI Designer</span>
+        <h5 className='text-4xl xl:text-5xl leading-tight lg:w-9/12 xl:leading-tight font-bold'>Elevating my skills through continuous learning, resulting <br className='hidden lg:block' /> in top-quality products</h5>
+      </section>
       {/* video */}
       <div className="mt-52">
         <video src="/video/qasdUd91.mp4" className='w-screen object-cover bg-center' autoPlay loop muted playsInline type="video/mp4"></video>
       </div>
       {/* portofolio */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 items-center px-20 mt-48">
-          <h5 className='text-2xl xl:text-3xl leading-snug xl:leading-snug averta-bold'>Everything should be prepared to avoid the things we won`t. Like showing my work before we collaborate, you can see details below.</h5>
-        <button className="w-fit h-fit text-xl averta-bold ml-auto px-6 py-3 rounded-full text-[#7000df] ring-1 ring-[#7000df]">See all</button>
+      <div className="px-20 mt-52">
+        <h5 className='text-4xl xl:text-5xl leading-snug xl:leading-snug font-semibold'>To ensure a smooth <span className='text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>collaboration</span>
+          , its helpful to show my work beforehand. This allows you to see the details and helps prevent any potential issues.
+        </h5>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-4 px-20 mt-36">
-        {/* <TinySlider settings={settings}> */}
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-x-4 px-20 mt-52' data-aos="fade-up">
+        {
+         work.map((items, i) => (i < 3 &&
+            <Link key={items.id} href={`/portofolio/${items.name}`}>
+              <CardWork images={items.image} title={items.name} description={items.description} tech={items.tech}/>
+            </Link>
+            )
+          )
+        }
+      </div>
+      {/* resources */}
+      <div className="bg-[#FAFAFA] w-full mt-52 pt-28 pb-48 rounded-tl-3xl rounded-tr-3xl">
+        <div className="px-20 mt-20 mb-40">
+          <h5 className='text-4xl xl:text-5xl leading-snug xl:leading-snug font-semibold'>I am committed to providing value and support to those who need it. I am happy to help build whatever is needed to make a positive impact.</h5>
+        </div>
+        <div className='grid grid-cols-1 lg:grid-cols-3 gap-x-4 px-20 mt-36' data-aos="fade-up">
           {
-            work.map((items) =>
-              <div key={items.id}>
-                <Image src={items.image} alt="" className='w-full h-96 bg-center object-cover' width={100} height={100}/>
-                <h5 className='text-2xl averta-bold'>{items.name}</h5>
-                <h5 className='text-base averta-regular'>{items.description}</h5>
-              </div>
+           work.map((items, i) => (i < 3 &&
+              <Link key={items.id} href={`/portofolio/${items.name}`}>
+                <CardWork images={items.image} title={items.name} description={items.description} tech={items.tech}/>
+              </Link>
+              )
             )
           }
-        {/* </TinySlider> */}
+        </div>
       </div>
     </Home>
   )

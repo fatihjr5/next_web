@@ -2,10 +2,10 @@ import Link from 'next/link'
 import React from 'react'
 export default function Footer() {
   return (
-    <div className='mt-20 mb-10 flex flex-col gap-y-8 lg:flex-row justify-between items-start'>
+    <div className='mt-20 mb-10 flex flex-col gap-y-8 lg:flex-row justify-between items-start px-20'>
         <section className='space-y-4'>
           <div className="flex flex-col gap-y-2">
-            <h5 className="text-white font-extrabold text-2xl leading-snug">Fatihibrahim.</h5>
+          <h5 className="text-black text-2xl averta-bold font-semibold tracking-tighter">Fatihibrahim.</h5>
             <p className='text-sm font-normal text-[#C0C0C0]'>Live in warmful city, Semarang Indonesia</p>
           </div>
           <Link href="" className='flex items-center text-white gap-x-2'>

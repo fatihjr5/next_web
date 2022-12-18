@@ -1,28 +1,28 @@
-const work = [
+const resources = [
     {   
         id: 1,
-        image: "/img/nifty.svg",
+        image: "/img/stock.png",
         name: "Nifty Educate",
         tech: "React JS, Laravel",
         description : "Nifty is a elearning platform for children that will generate NFTs after finish the task or course."
     },
     {   
         id: 2,
-        image: "/img/emr.svg",
-        name: "EMR Kustati",
+        image: "/img/stock.png",
+        name: "Emr Kustati",
         tech: "Next JS, Prisma",
         description : "Nifty is a elearning platform for children that will generate NFTs after finish the task or course."
     },
     {   
         id: 3,
-        image: "/img/triz.svg",
+        image: "/img/stock.png",
         name: "Triz Academy",
         tech: "Laravel, TailwindCSS",
         description : "Nifty is a elearning platform for children that will generate NFTs after finish the task or course."
     },
     {   
         id: 4,
-        image: "/img/emr.svg",
+        image: "/img/stock.png",
         name: "Nifty Educate",
         tech: "Next JS, Prisma",
         description : "Nifty is a elearning platform for children that will generate NFTs after finish the task or course."
@@ -35,4 +35,4 @@ const work = [
     }
 ]
 
-export default work
+export default resources

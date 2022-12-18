@@ -1,17 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @font-face {
-  font-family: averta-regular;
+  font-family: Qdlkjkc891Dsa1;
   src: url(AvertaStd-Regular.ttf);
 }
-@font-face {
-  font-family: averta-semibold;
-  src: url(AvertaStd-Semibold.ttf);
-}
-@font-face {
-  font-family: averta-bold;
-  src: url(AvertaStd-Bold.ttf);
+
+* {
+  font-family: Qdlkjkc891Dsa1;
 }
